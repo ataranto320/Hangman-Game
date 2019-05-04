@@ -20,7 +20,9 @@
     var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     var gameWords: ["snake", "liquid", "greyfox", "bigboss", "ocelot"];
     randomWord(["snake", "liquid", "greyfox", "bigboss", "ocelot"]);
+
     document.getElementById("gameWords").innerHTML = Math.random();
+
     isCorrectGuess('snake', 's');
     if (true){
         return correct;
@@ -28,6 +30,19 @@
         return incorrect;
 
     console.log(isCorrectGuess(s));
+
+    getBlanks("snake");
+
+    function getBlanks(_){
+        if(letters(_)) == 's'{
+            return true;
+        }
+        if (letters(_)) == "a"{
+            return false;
+        }
+    }
+
+
 
     randomWord function
     isCorrectGuess function
