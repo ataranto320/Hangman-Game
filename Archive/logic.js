@@ -38,12 +38,13 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
                };
 
                function setupRound(word){
-               word
-               guessesLeft: 9;
-               wrongGuesses: [];
-               puzzleState: getBlanks(word)
+               var word = pickWord();
+               var getBlanks = setupGetBlanks(word);
+               var fillBlanks = word.length;
+               var pickWord = function() {
+
                }
-               return 
+               
 
                 
 
