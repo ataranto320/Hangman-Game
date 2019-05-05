@@ -45,17 +45,25 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 
                }
                
-               var setupGetBlanks = function (word) {
+               setupGetBlanks = function (word) {
 
                };
 
-               var showPlayerProgress = function (getBlanks){
+               showPlayerProgress = function (getBlanks){
 
                };
 
-               var updateRound = function (guess, word, getBlanks) {
+               updateRound = function (guess, word, getBlanks) {
 
                };
+
+               hasWon
+               hasLost
+               isEndOfRound
+               setupGame
+               startNewRound
+               myGame
+
                 
 
         setupRound
