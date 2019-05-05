@@ -14,21 +14,21 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
                 var fillBlanks = word.length;
 
                 while (fillBlanks > 0) {
-                    alert getBlanks.join(" ");
-                }
 
-               var guess = prompt("Break The Codec.");
-               if (guess === null){
-                   break;
-               } else if (guess.length !== 1) {
-                   alert("Enter Letter.")
-               } else {
-                   for (var g = 0; g < word.length; g++){
-                       if (word[g] === guess) {
-                           getBlanks[g] = guess; fillBlanks;
+                    var guess = prompt("Break The Codec.");
+                        if (guess === null){
+                        break;
+                            } else if (guess.length !== 1) {
+                                alert("Enter Letter.")
+                                    } else {
+                                        for (var g = 0; g < word.length; g++){
+                                            if (word[g] === guess) {
+                                                getBlanks[g] = guess; fillBlanks;
                        }
                    }
                }
+
+            }
 
                alert(getBlanks.join(" "));
                alert("Mission Accomplished " + word);
