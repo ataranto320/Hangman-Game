@@ -3,10 +3,8 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
         // array of words
         var gameWords: ["snake", "liquid", "greyfox", "bigboss", "ocelot"];
 
-            randomWord(["snake", "liquid", "greyfox", "bigboss", "ocelot"]);
-
                 //picking random word from array
-                var word = gameWords[Math.floor(Math.random() * gameWords.length)];
+                var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 
                 var getBlanks = [];
                 for (var i = 0; i < word.length; i++){
@@ -31,6 +29,22 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
                        }
                    }
                }
+
+               alert(getBlanks.join(" "));
+               alert("Mission Accomplished " + word);
+
+               var gameWords = function (){
+                   
+               };
+
+               function setupRound(word){
+               word
+               guessesLeft: 9;
+               wrongGuesses: [];
+               puzzleState: getBlanks(word)
+               }
+               return 
+
                 
 
         setupRound
@@ -47,10 +61,7 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
     else (false)
         return incorrect;
 
-    console.log(isCorrectGuess(s));
 
-    //returns ["_", "_", "_", "_", "_"]
-    getBlanks("snake");
 
     function getBlanks(_){
         if(letters(_)) == 's'{
@@ -59,14 +70,7 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
         if (letters(_)) == "a"{
             return false;
         }
-    }
-    //returns ["_", "n", "_", "_", "_"]
-    fillBlanks("snake", ["_", "_", "_", "_", "_", "n"];
 
 
 
-    randomWord function
-    isCorrectGuess function
-    getBlanks function
-    fillBlanks function
-    gameWords variable
+    
