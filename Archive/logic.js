@@ -43,7 +43,18 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
                var fillBlanks = word.length;
                var pickWord = function() {
 
+               };
+
+               function updateRound(word){
+
                }
+
+
+               var audioElement = document.createElement("audio");
+               audioElement.setAttribute(src="https://www.youtube.com/watch?v=5105DeorjrY");
+
+
+
                
                setupGetBlanks = function (word) {
 
@@ -57,6 +68,12 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 
                };
 
+               setupRound
+               word
+               guessesLeft
+               wrongGuesses
+               puzzleState
+
                hasWon
                hasLost
                isEndOfRound
@@ -66,11 +83,7 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 
                 
 
-        setupRound
-        word
-        guessesLeft
-        wrongGuesses
-        puzzleState
+        
 
 
 
