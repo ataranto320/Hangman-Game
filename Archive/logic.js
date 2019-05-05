@@ -30,6 +30,22 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 
             }
 
+             // create alphabet list
+            var buttons = function () {
+            myButtons = document.getElementById('buttons');
+            letters = document.createElement('ul');
+
+            for (var i = 0; i < alphabet.length; i++) {
+            letters.id = 'alphabet';
+            list = document.createElement('li');
+            list.id = 'letter';
+            list.innerHTML = alphabet[i];
+            check();
+            myButtons.appendChild(letters);
+            letters.appendChild(list);
+            }
+        }
+
                alert(getBlanks.join(" "));
                alert("Mission Accomplished " + word);
 
@@ -74,8 +90,8 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
                wrongGuesses
                puzzleState
 
-               hasWon
-               hasLost
+               var hasWon = ["Mission Accomplished"];
+               var hasLost = ["Game Over"];
                isEndOfRound
                setupGame
                startNewRound
