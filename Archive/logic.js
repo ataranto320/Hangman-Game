@@ -9,7 +9,13 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
         var lives;
         var counter;
         var space;
-        
+
+        //elements
+        var showLives = document.getElementById("myLives");
+        var randomWord = document.getElementById("randomWord");
+        var getBlanks = document.getElementById("getBlanks");
+        var fillBlanks = document.getElementById("fillBlanks");
+
 
                 //picking random word from array
                 var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
