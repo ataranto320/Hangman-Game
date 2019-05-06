@@ -23,7 +23,13 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
         }
 
             for (var i = 0; i < letters.length; i++) {
-
+                letters.id = "letters";
+                list = document.createElement("li");
+                list.id = "letter";
+                list.innerHTML = letters[i];
+                check();
+                myButtons.appendChild(letters);
+                letters.appendChild(list);
             }
 
 
