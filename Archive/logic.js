@@ -50,15 +50,15 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
                }
 
                setupGetBlanks = function (word) {
-
+                document.getElementById(getBlanks);
                };
 
                showPlayerProgress = function (getBlanks){
-
+                document.getElementById(fillBlanks);
                };
 
                updateRound = function (guess, word, getBlanks) {
-
+                document.getElementById()
                };
 
 
