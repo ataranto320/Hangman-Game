@@ -49,13 +49,6 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 
                }
 
-
-               var audioElement = document.createElement("audio");
-               audioElement.setAttribute(src="https://www.youtube.com/watch?v=5105DeorjrY");
-
-
-
-               
                setupGetBlanks = function (word) {
 
                };
@@ -67,6 +60,8 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
                updateRound = function (guess, word, getBlanks) {
 
                };
+
+
 
                setupRound
                word
@@ -81,6 +76,9 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
                startNewRound
                myGame
 
+
+               var audioElement = document.createElement("audio");
+               audioElement.setAttribute(src="https://www.youtube.com/watch?v=5105DeorjrY");
                 
 
         
@@ -89,9 +87,35 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 
     isCorrectGuess('snake', 's');
     if (true){
-        return correct;
+        return fillBlanks;
     else (false)
-        return incorrect;
+        return getBlanks;
+
+    isCorrectGuess('snake', 'n');
+    if (true){
+        return fillBlanks;
+    else (false)
+        return getBlanks;
+
+    isCorrectGuess('snake', 'a');
+    if (true){
+        return fillBlanks;
+    else (false)
+        return getBlanks;
+
+    isCorrectGuess('snake', 'k');
+    if (true){
+        return fillBlanks;
+    else (false)
+        return getBlanks;
+
+    isCorrectGuess('snake', 'e');
+    if (true){
+        return fillBlanks;
+    else (false)
+        return getBlanks;
+
+
 
 
 
