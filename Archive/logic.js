@@ -11,10 +11,20 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
         var space;
 
         //elements
-        var showLives = document.getElementById("myLives");
+        var guessesLeft = document.getElementById("guessesLeft");
         var randomWord = document.getElementById("randomWord");
         var getBlanks = document.getElementById("getBlanks");
         var fillBlanks = document.getElementById("fillBlanks");
+
+        //try to create letter list
+        var buttons = function() {
+            myButtons = document.getElementById("buttons");
+            letters = document.getElementById("ul");
+        }
+
+            for (var i = 0; i < letters.length; i++) {
+
+            }
 
 
                 //picking random word from array
