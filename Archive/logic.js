@@ -3,6 +3,14 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
         // array of words
         var gameWords: ["snake", "liquid", "greyfox", "bigboss", "ocelot"];
 
+        var word;
+        var guess;
+        var guesses = [ ];
+        var lives;
+        var counter;
+        var space;
+        
+
                 //picking random word from array
                 var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
 
