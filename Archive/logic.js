@@ -10,8 +10,36 @@
 
         $(gameWords)
 
-        function isCorrectGuess(letters, gameWords);
-            if ()
+        // function isCorrectGuess(letters, gameWords);
+        // isCorrectGuess('snake', 's');
+        // if (true){
+        //     return fillBlanks;
+        // else (false)
+        //     return getBlanks;
+    
+        // isCorrectGuess('snake', 'n');
+        // if (true){
+        //     return fillBlanks;
+        // else (false)
+        //     return getBlanks;
+    
+        // isCorrectGuess('snake', 'a');
+        // if (true){
+        //     return fillBlanks;
+        // else (false)
+        //     return getBlanks;
+    
+        // isCorrectGuess('snake', 'k');
+        // if (true){
+        //     return fillBlanks;
+        // else (false)
+        //     return getBlanks;
+    
+        // isCorrectGuess('snake', 'e');
+        // if (true){
+        //     return fillBlanks;
+        // else (false)
+        //     return getBlanks;
 
         // function randomWordReturn(gameWords){
         //     document.getElementById(gameWords).innerHTML = gameWords.find(randomWordReturn);
@@ -140,35 +168,7 @@
 
 
 
-    // isCorrectGuess('snake', 's');
-    // if (true){
-    //     return fillBlanks;
-    // else (false)
-    //     return getBlanks;
-
-    // isCorrectGuess('snake', 'n');
-    // if (true){
-    //     return fillBlanks;
-    // else (false)
-    //     return getBlanks;
-
-    // isCorrectGuess('snake', 'a');
-    // if (true){
-    //     return fillBlanks;
-    // else (false)
-    //     return getBlanks;
-
-    // isCorrectGuess('snake', 'k');
-    // if (true){
-    //     return fillBlanks;
-    // else (false)
-    //     return getBlanks;
-
-    // isCorrectGuess('snake', 'e');
-    // if (true){
-    //     return fillBlanks;
-    // else (false)
-    //     return getBlanks;
+   
 
 
 
