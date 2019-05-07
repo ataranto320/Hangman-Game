@@ -8,6 +8,26 @@
             var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
         }
 
+        console.log(gameWords);
+
+        function randomWordReturn(gameWords){
+            document.getElementById(gameWords).innerHTML = gameWords.find(randomWordReturn);
+        }
+
+        // picking random word from array
+        var getBlanks = [];
+          for (var i = 0; i < word.length; i++){
+              getBlanks[i] = "_";
+        }
+
+        // 1.2
+
+        // 1.3 
+
+        // 1.4 
+
+
+
     //     var word;
     //     var guess;
     //     var guesses = [ ];
@@ -41,13 +61,7 @@
             
 
 
-    //             //picking random word from array
-                
-
-    //             var getBlanks = [];
-    //             for (var i = 0; i < word.length; i++){
-    //                 getBlanks[i] = "_";
-    //             }
+              
 
     //             var fillBlanks = word.length;
 
