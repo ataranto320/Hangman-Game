@@ -8,17 +8,20 @@
             var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
         }
 
-        console.log(gameWords);
+        $(gameWords)
 
-        function randomWordReturn(gameWords){
-            document.getElementById(gameWords).innerHTML = gameWords.find(randomWordReturn);
-        }
+        function isCorrectGuess(letters, gameWords);
+            if ()
 
-        // picking random word from array
-        var getBlanks = [];
-          for (var i = 0; i < word.length; i++){
-              getBlanks[i] = "_";
-        }
+        // function randomWordReturn(gameWords){
+        //     document.getElementById(gameWords).innerHTML = gameWords.find(randomWordReturn);
+        // }
+
+        // // picking random word from array
+        // var getBlanks = [];
+        //   for (var i = 0; i < word.length; i++){
+        //       getBlanks[i] = "_";
+        // }
 
         // 1.2
 
@@ -36,10 +39,10 @@
     //     var space;
 
     //     //elements
-    //     var guessesLeft = document.getElementById("guessesLeft");
-    //     var randomWord = document.getElementById("randomWord");
-    //     var getBlanks = document.getElementById("getBlanks");
-    //     var fillBlanks = document.getElementById("fillBlanks");
+        // var guessesLeft = document.getElementById("guessesLeft");
+        // var randomWord = document.getElementById("randomWord");
+        // var getBlanks = document.getElementById("getBlanks");
+        // var fillBlanks = document.getElementById("fillBlanks");
 
     //     //try to create letter list
     //     var buttons = function() {
