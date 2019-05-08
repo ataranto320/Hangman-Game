@@ -1,6 +1,4 @@
-// var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-        // array of words
+var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
         var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot']
 
@@ -8,9 +6,9 @@
             var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
         }
 
-        var gameWords = document.getElementById("game-words");
+        // // var gameWords = document.getElementById("game-words");
 
-        $(gameWords)
+        // $(gameWords)
 
         // function isCorrectGuess(letters, gameWords);
         // isCorrectGuess('snake', 's');
@@ -53,12 +51,6 @@
         //       getBlanks[i] = "_";
         // }
 
-        // 1.2
-
-        // 1.3 
-
-        // 1.4 
-
 
 
     //     var word;
@@ -92,10 +84,6 @@
 
     //         //guesses left
             
-
-
-              
-
     //             var fillBlanks = word.length;
 
     //             while (fillBlanks > 0) {
@@ -165,16 +153,6 @@
     //            var audioElement = document.createElement("audio");
     //            audioElement.setAttribute(src="https://www.youtube.com/watch?v=5105DeorjrY");
                 
-
-        
-
-
-
-   
-
-
-
-
 
     // function getBlanks(_){
     //     if(letters(_)) == 's'{
