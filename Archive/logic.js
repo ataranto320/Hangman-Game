@@ -65,8 +65,11 @@
 
         function hasWon(puzzleState) {
             for (var i = 0; i < gameWords.length; i++) {
-                if (puzzleState[i] === "_")
+                if (puzzleState[i] === "_") {
+                    return false;
+                }
             }
+            return true ("Misson Accomplished.");
         }
 
 
