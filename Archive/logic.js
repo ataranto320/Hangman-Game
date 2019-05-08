@@ -30,6 +30,28 @@
             return answerArr;
         }
 
+        //replace blank with letter
+        function fillBlanks(gameWords, puzzleState, letters) {
+            if (isCorrectGuess(gameWords, letters)) {
+                for (var i = 0; i < gameWords.length; i++) {
+                    if (gameWords[i] === letters) {
+                        puzzleState[i] = letters;
+                    }
+                }
+            }
+            return puzzleState;
+        }
+
+        function setupRound(gameWords) {
+            var object = {
+                word: gameWords,
+                guessesLeft: 9,
+                wrongGuesses: [],
+                puzzleState: getBlanks(gameWords),
+            }
+            return object;
+        }
+
 
         // var select = selectword[random];
 
