@@ -22,6 +22,14 @@
               getBlanks[i] = "_";
         }
 
+        var getBlanks = function(gameWords) {
+            var answerArr = [];
+            for (var i = 0; i < gameWords.length; i++) {
+                answerArr[i] = "_";
+            }
+            return answerArr;
+        }
+
 
         // var select = selectword[random];
 
