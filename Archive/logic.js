@@ -6,40 +6,61 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
             var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
         }
 
+        
+
         // // var gameWords = document.getElementById("game-words");
 
         // $(gameWords)
 
         // function isCorrectGuess(letters, gameWords);
         // isCorrectGuess('snake', 's');
-        // if (true){
-        //     return fillBlanks;
-        // else (false)
-        //     return getBlanks;
+        // if (word[i] === "-") {
+        //     isCorrectGuess.innerHTML = "-";
+        //     space = 1;
+        // }
+        // else {
+        //     isCorrectGuess.innerHTML = "_";
+        // }
     
+        // function isCorrectGuess(letters, gameWords);
         // isCorrectGuess('snake', 'n');
-        // if (true){
-        //     return fillBlanks;
-        // else (false)
-        //     return getBlanks;
-    
+        // if (word[i] === "-") {
+        //     isCorrectGuess.innerHTML = "-";
+        //     space = 1;
+        // }
+        // else {
+        //     isCorrectGuess.innerHTML = "_";
+        // }    
+
+        // function isCorrectGuess(letters, gameWords);
         // isCorrectGuess('snake', 'a');
-        // if (true){
-        //     return fillBlanks;
-        // else (false)
-        //     return getBlanks;
-    
+        // if (word[i] === "-") {
+        //     isCorrectGuess.innerHTML = "-";
+        //     space = 1;
+        // }
+        // else {
+        //     isCorrectGuess.innerHTML = "_";
+        // }
+
+        // function isCorrectGuess(letters, gameWords);
         // isCorrectGuess('snake', 'k');
-        // if (true){
-        //     return fillBlanks;
-        // else (false)
-        //     return getBlanks;
-    
+        // if (word[i] === "-") {
+        //     isCorrectGuess.innerHTML = "-";
+        //     space = 1;
+        // }
+        // else {
+        //     isCorrectGuess.innerHTML = "_";
+        // }
+
+        // function isCorrectGuess(letters, gameWords);
         // isCorrectGuess('snake', 'e');
-        // if (true){
-        //     return fillBlanks;
-        // else (false)
-        //     return getBlanks;
+        // if (word[i] === "-") {
+        //     isCorrectGuess.innerHTML = "-";
+        //     space = 1;
+        // }
+        // else {
+        //     isCorrectGuess.innerHTML = "_";
+        // }
 
         // function randomWordReturn(gameWords){
         //     document.getElementById(gameWords).innerHTML = gameWords.find(randomWordReturn);
