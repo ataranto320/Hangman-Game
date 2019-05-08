@@ -8,6 +8,8 @@
             var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
         }
 
+        var gameWords = document.getElementById("game-words");
+
         $(gameWords)
 
         // function isCorrectGuess(letters, gameWords);
