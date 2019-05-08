@@ -4,6 +4,7 @@
 
         function randomWord(words){
             randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+            return gameWords[randomWord];
         }
 
         var select = selectword[random];
