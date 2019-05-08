@@ -30,47 +30,54 @@
             return answerArr;
         }
 
-        //replace blank with letter
-        function fillBlanks(gameWords, puzzleState, letters) {
-            if (isCorrectGuess(gameWords, letters)) {
-                for (var i = 0; i < gameWords.length; i++) {
-                    if (gameWords[i] === letters) {
-                        puzzleState[i] = letters;
-                    }
+        // //replace blank with letter
+        // function fillBlanks(gameWords, puzzleState, letters) {
+        //     if (isCorrectGuess(gameWords, letters)) {
+        //         for (var i = 0; i < gameWords.length; i++) {
+        //             if (gameWords[i] === letters) {
+        //                 puzzleState[i] = letters;
+        //             }
+        //         }
+        //     }
+        //     return puzzleState;
+        // }
+
+        // function setupRound(gameWords) {
+        //     var object = {
+        //         word: gameWords,
+        //         guessesLeft: 9,
+        //         wrongGuesses: [],
+        //         puzzleState: getBlanks(gameWords),
+        //     }
+        //     return object;
+        // }
+
+        // function updateRound(object, letters) {
+        //     if (isCorrectGuess(object.word, letters) === false) {
+        //         object.guessesLeft--;
+        //         object.wrongGuesses.push(letters);
+        //     }
+        //     else {
+        //         fillBlanks(object.word, object.puzzleState, letters)
+        //     }
+        //     return object;
+        // }
+
+        // function hasWon(puzzleState) {
+        //     for (var i = 0; i < gameWords.length; i++) {
+        //         if (puzzleState[i] === "_") {
+        //             return false;
+        //         }
+        //     }
+        //     return true ("Misson Accomplished.");
+        // }
+
+            function hasLost(guessesLeft) {
+                if (guessesLeft === 0) {
+                    return true ("Game Over.");
                 }
+                return false;
             }
-            return puzzleState;
-        }
-
-        function setupRound(gameWords) {
-            var object = {
-                word: gameWords,
-                guessesLeft: 9,
-                wrongGuesses: [],
-                puzzleState: getBlanks(gameWords),
-            }
-            return object;
-        }
-
-        function updateRound(object, letters) {
-            if (isCorrectGuess(object.word, letters) === false) {
-                object.guessesLeft--;
-                object.wrongGuesses.push(letters);
-            }
-            else {
-                fillBlanks(object.word, object.puzzleState, letters)
-            }
-            return object;
-        }
-
-        function hasWon(puzzleState) {
-            for (var i = 0; i < gameWords.length; i++) {
-                if (puzzleState[i] === "_") {
-                    return false;
-                }
-            }
-            return true ("Misson Accomplished.");
-        }
 
 
         // var select = selectword[random];
