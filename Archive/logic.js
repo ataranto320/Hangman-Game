@@ -63,6 +63,12 @@
             return object;
         }
 
+        function hasWon(puzzleState) {
+            for (var i = 0; i < gameWords.length; i++) {
+                if (puzzleState[i] === "_")
+            }
+        }
+
 
         // var select = selectword[random];
 
