@@ -7,7 +7,23 @@
             return gameWords[randomWord];
         }
 
-        var select = selectword[random];
+        var isCorrectGuess = function(gameWords, letters) {
+            for (var i = 0; i < gameWords.length; i++) {
+                if (gameWords[i] === letters) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // picking random word from array
+        var getBlanks = [];
+          for (var i = 0; i < word.length; i++){
+              getBlanks[i] = "_";
+        }
+
+
+        // var select = selectword[random];
 
         
 
@@ -69,11 +85,7 @@
         //     document.getElementById(gameWords).innerHTML = gameWords.find(randomWordReturn);
         // }
 
-        // // picking random word from array
-        // var getBlanks = [];
-        //   for (var i = 0; i < word.length; i++){
-        //       getBlanks[i] = "_";
-        // }
+        
 
 
 
