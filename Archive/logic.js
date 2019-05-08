@@ -157,11 +157,25 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
 
 
 
-    //            setupRound
-    //            word
-    //            guessesLeft
-    //            wrongGuesses
-    //            puzzleState
+            //    var setupRound
+            //    var word
+            //    var guessesLeft
+            //    var wrongGuesses
+            //    var puzzleState
+
+            function setupRound(game){
+                var puzzleState = 
+                game.round.puzzleState;
+                if (hasWon(puzzleState) === true) {
+                    game.wins++;
+                    alert("Mission Accomplished.");
+                    else {
+                        game.losses++;
+                        alert("Game Over.");
+                    }
+                }
+                return game;
+            }
 
     //            var hasWon = ["Mission Accomplished"];
     //            var hasLost = ["Game Over"];
