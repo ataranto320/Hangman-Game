@@ -52,6 +52,17 @@
             return object;
         }
 
+        function updateRound(object, letters) {
+            if (isCorrectGuess(object.word, letters) === false) {
+                object.guessesLeft--;
+                object.wrongGuesses.push(letters);
+            }
+            else {
+                fillBlanks(object.word, object.puzzleState, letters)
+            }
+            return object;
+        }
+
 
         // var select = selectword[random];
 
