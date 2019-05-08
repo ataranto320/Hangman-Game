@@ -1,10 +1,12 @@
-var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+// var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
         var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot']
 
         function randomWord(words){
-            var randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
+            randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
         }
+
+        var select = selectword[random];
 
         
 
@@ -163,19 +165,23 @@ var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "
             //    var wrongGuesses
             //    var puzzleState
 
-            function setupRound(game){
-                var puzzleState = 
-                game.round.puzzleState;
-                if (hasWon(puzzleState) === true) {
-                    game.wins++;
-                    alert("Mission Accomplished.");
-                    else {
-                        game.losses++;
-                        alert("Game Over.");
-                    }
-                }
-                return game;
-            }
+            // function setupRound(game){
+            //     var puzzleState = 
+            //     game.round.puzzleState;
+            //     if (hasWon(puzzleState) === true) {
+            //         game.wins++;
+            //         alert("Mission Accomplished.");
+            //         else {
+            //             game.losses++;
+            //             alert("Game Over.");
+            //         }
+            //     }
+            //     return game;
+            // }
+
+            // function guessesLeft(game){
+
+            // }
 
     //            var hasWon = ["Mission Accomplished"];
     //            var hasLost = ["Game Over"];
