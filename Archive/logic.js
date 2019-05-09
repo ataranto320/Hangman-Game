@@ -2,9 +2,8 @@
 
         var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot']
 
-        function randomWord(words){
-            randomWord = gameWords[Math.floor(Math.random() * gameWords.length)];
-            return gameWords[randomWord];
+        function randomWord(gameWords){
+            return gameWords[Math.floor(Math.random() * gameWords.length)];
         }
 
         var isCorrectGuess = function(gameWords, letters) {
