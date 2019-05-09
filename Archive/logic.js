@@ -1,25 +1,25 @@
-// var letters: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-        var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot']
+    var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot']
 
         function randomWord(gameWords){
             return gameWords[Math.floor(Math.random() * gameWords.length)];
         }
 
-        var isCorrectGuess = function(gameWords, letters) {
-            for (var i = 0; i < gameWords.length; i++) {
-                if (gameWords[i] === letters) {
+        var isCorrectGuess = function(word, letters) {
+            for (var i = 0; i < word.length; i++) {
+                if (word[i] === letters) {
                     return true;
                 }
             }
             return false;
         }
 
-        // picking random word from array
-        var getBlanks = [];
-          for (var i = 0; i < word.length; i++){
-              getBlanks[i] = "_";
-        }
+        // // picking random word from array
+        // var getBlanks = [];
+        //   for (var i = 0; i < word.length; i++){
+        //       getBlanks[i] = "_";
+        // }
 
         var getBlanks = function(gameWords) {
             var answerArr = [];
@@ -30,10 +30,10 @@
         }
 
         //replace blank with letter
-        function fillBlanks(gameWords, puzzleState, letters) {
-            if (isCorrectGuess(gameWords, letters)) {
-                for (var i = 0; i < gameWords.length; i++) {
-                    if (gameWords[i] === letters) {
+        function fillBlanks(word, puzzleState, letters) {
+            if (isCorrectGuess(word, letters)) {
+                for (var i = 0; i < word.length; i++) {
+                    if (word[i] === letters) {
                         puzzleState[i] = letters;
                     }
                 }
@@ -41,12 +41,12 @@
             return puzzleState;
         }
 
-        function setupRound(gameWords) {
+        function setupRound(word) {
             var object = {
-                word: gameWords,
+                word: word,
                 guessesLeft: 9,
                 wrongGuesses: [],
-                puzzleState: getBlanks(gameWords),
+                puzzleState: getBlanks(word),
             }
             return object;
         }
@@ -63,7 +63,7 @@
         }
 
         function hasWon(puzzleState) {
-            for (var i = 0; i < gameWords.length; i++) {
+            for (var i = 0; i < puzzleState.length; i++) {
                 if (puzzleState[i] === "_") {
                     return false;
                 }
@@ -103,12 +103,12 @@
                     alert("Mission Accomplished.");
                 }
             }
-                else {
-                    newGame.losses++; {
-                        alert("Gamer Over.");
-                    }
-                return newGame;
-                }
+                // else {
+                //     newGame.losses++; {
+                //         alert("Gamer Over.");
+                //     }
+                // return newGame;
+                // }
                 
                 var myGame = setupGame(gameWords, 0, 0);
 
@@ -119,6 +119,7 @@
 
                 var pressedKey;
                 document.onkeyup = function (event) {
+
                     pressedKey = event.key.toLowerCase()
                     console.log(pressedKey);
                     isCorrectGuess(myGame.round.word, pressedKey);
@@ -133,13 +134,16 @@
                     }
 
                     document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
-                    document.getElementById('wrong-guesses').innerText = myGame.round.wrongGuesses;
                     document.getElementById("win-counter").innerText = myGame.wins;
                     document.getElementById("loss-counter").innerText = myGame.losses;
+                    document.getElementById('wrong-guesses').innerText = myGame.round.wrongGuesses;
                     document.getElementById("gusses-left").innerText = myGame.round.guessesLeft;
 
                     console.log(myGame);
                 }
+            
+
+    
 
             // function setupRound(game){
             //     var puzzleState = 
