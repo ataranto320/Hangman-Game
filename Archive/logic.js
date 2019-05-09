@@ -95,6 +95,41 @@
                 return newGame;
             }
 
+            function startNewRound(newGame) {
+                var puzzleState = newGame.round.puzzleState;
+                var roundWord = newGame.round.word;
+                if (hasWon(puzzleState) === true) {
+                    newGame.wins++;
+                    alert("Mission Accomplished.");
+                }
+            }
+                else {
+                    newGame.losses++; {
+                        alert("Gamer Over.");
+                    }
+                return newGame;
+                }
+                
+                var myGame = setupGame(gameWords, 0, 0);
+
+                console.log(myGame);
+
+                var puzzle = document.getElementById("puzzle-state")
+                puzzle.innerHTML = myGame.round.puzzleState.join(" ")
+
+                var pressedKey;
+                document.onkeyup = function (event) {
+                    pressedKey = event.key.toLowerCase()
+                    console.log(pressedKey);
+                    isCorrectGuess(myGame.round.word, pressedKey);
+                    fillBlanks(myGame.round.word, myGame.round.puzzleState, pressedKey);
+                    updateRound(myGame.round, pressedKey);
+                    hasWon(myGame.round.puzzleState);
+                    hasLost(myGame.round.guessesLeft);
+
+                    
+                }
+
             // function setupRound(game){
             //     var puzzleState = 
             //     game.round.puzzleState;
