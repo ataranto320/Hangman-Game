@@ -85,6 +85,30 @@
                 returnfalse;
             }
 
+            function setupGame(gameWords, wins, losses) {
+                var newGame = {
+                    words: gameWords,
+                    wins: wins,
+                    losses: losses,
+                    newRound: setupRound(randomWord(gameWords)),
+                }
+                return newGame;
+            }
+
+            // function setupRound(game){
+            //     var puzzleState = 
+            //     game.round.puzzleState;
+            //     if (hasWon(puzzleState) === true) {
+            //         game.wins++;
+            //         alert("Mission Accomplished.");
+            //         else {
+            //             game.losses++;
+            //             alert("Game Over.");
+            //         }
+            //     }
+            //     return game;
+            // }
+
 
         // var select = selectword[random];
 
@@ -240,20 +264,6 @@
             //    var guessesLeft
             //    var wrongGuesses
             //    var puzzleState
-
-            // function setupRound(game){
-            //     var puzzleState = 
-            //     game.round.puzzleState;
-            //     if (hasWon(puzzleState) === true) {
-            //         game.wins++;
-            //         alert("Mission Accomplished.");
-            //         else {
-            //             game.losses++;
-            //             alert("Game Over.");
-            //         }
-            //     }
-            //     return game;
-            // }
 
             // function guessesLeft(game){
 
