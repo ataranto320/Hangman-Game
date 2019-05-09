@@ -127,7 +127,10 @@
                     hasWon(myGame.round.puzzleState);
                     hasLost(myGame.round.guessesLeft);
 
-                    
+                    if (isEndOfRound(myGame.round)) {
+                        myGame = startNewRound(myGame);
+                        myGame.round = setupRound(randomWord(gameWords));
+                    }
                 }
 
             // function setupRound(game){
