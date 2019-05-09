@@ -131,6 +131,14 @@
                         myGame = startNewRound(myGame);
                         myGame.round = setupRound(randomWord(gameWords));
                     }
+
+                    document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
+                    document.getElementById('wrong-guesses').innerText = myGame.round.wrongGuesses;
+                    document.getElementById("win-counter").innerText = myGame.wins;
+                    document.getElementById("loss-counter").innerText = myGame.losses;
+                    document.getElementById("gusses-left").innerText = myGame.round.guessesLeft;
+
+                    console.log(myGame);
                 }
 
             // function setupRound(game){
