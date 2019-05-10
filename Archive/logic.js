@@ -103,7 +103,6 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                     alert("Mission Accomplished.");
                 }
             }
-            
                 else {
                     newGame.losses++;
                     alert("Game Over.");
@@ -129,6 +128,7 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                         }
                     }
                     }
+
                     console.log(pressedKey);
                     isCorrectGuess(myGame.round.gameWords, pressedKey);
                     fillBlanks(myGame.round.gameWords, myGame.round.puzzleState, pressedKey);
@@ -141,11 +141,11 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                         myGame.round = setupRound(randomWord(gameWords));
                     }
 
-                    document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
-                    document.getElementById("win-counter").innerText = myGame.wins;
-                    document.getElementById("loss-counter").innerText = myGame.losses;
-                    document.getElementById('wrong-guesses').innerText = myGame.round.wrongGuesses;
-                    document.getElementById("gusses-left").innerText = myGame.round.guessesLeft;
+                    document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
+                    document.getElementById("win-counter").innerHTML = myGame.wins;
+                    document.getElementById("loss-counter").innerHTML = myGame.losses;
+                    document.getElementById('wrong-guesses').innerHTML = myGame.round.wrongGuesses;
+                    document.getElementById("gusses-left").innerHTML = myGame.round.guessesLeft;
 
                     console.log(myGame);
                 }
