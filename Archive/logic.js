@@ -150,6 +150,9 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                     console.log(myGame);
                 }
             
+                //can't get audio to work.
+                var audioElement = document.createElement("audio");
+                audioElement.setAttribute(src="https://www.youtube.com/watch?v=5105DeorjrY");
             
 
     
@@ -336,8 +339,7 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
     //            myGame
 
 
-    //            var audioElement = document.createElement("audio");
-    //            audioElement.setAttribute(src="https://www.youtube.com/watch?v=5105DeorjrY");
+
                 
 
     // function getBlanks(_){
