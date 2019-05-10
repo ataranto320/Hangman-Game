@@ -3,7 +3,7 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
     var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot']
 
         function randomWord(gameWords){
-            return gameWords[Math.floor(Math.random() * gameWords.length)];
+            return gameWords [Math.floor(Math.random() * gameWords.length)];
         }
 
         var isCorrectGuess = function(word, letters) {
@@ -30,10 +30,10 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
         }
 
         //replace blank with letter
-        function fillBlanks(word, puzzleState, letters) {
-            if (isCorrectGuess(word, letters)) {
-                for (var i = 0; i < word.length; i++) {
-                    if (word[i] === letters) {
+        function fillBlanks(gameWords, puzzleState, letters) {
+            if (isCorrectGuess(gameWords, letters)) {
+                for (var i = 0; i < gameWords.length; i++) {
+                    if (gameWords[i] === letters) {
                         puzzleState[i] = letters;
                     }
                 }
@@ -41,23 +41,23 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
             return puzzleState;
         }
 
-        function setupRound(word) {
+        function setupRound(gameWords) {
             var object = {
                 word: word,
                 guessesLeft: 9,
                 wrongGuesses: [],
-                puzzleState: getBlanks(word),
+                puzzleState: getBlanks(gameWords),
             }
             return object;
         }
 
         function updateRound(object, letters) {
-            if (isCorrectGuess(object.word, letters) === false) {
+            if (isCorrectGuess(object.gameWords, letters) === false) {
                 object.guessesLeft--;
                 object.wrongGuesses.push(letters);
             }
             else {
-                fillBlanks(object.word, object.puzzleState, letters)
+                fillBlanks(object.gameWords, object.puzzleState, letters)
             }
             return object;
         }
@@ -103,12 +103,14 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                     alert("Mission Accomplished.");
                 }
             }
-                // else {
-                //     newGame.losses++; {
-                //         alert("Gamer Over.");
-                //     }
-                // return newGame;
-                // }
+            
+                else {
+                    newGame.losses++;
+                    alert("Game Over.");
+                }
+                return newGame;
+                    
+                
                 
                 var myGame = setupGame(gameWords, 0, 0);
 
@@ -122,8 +124,8 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
 
                     pressedKey = event.key.toLowerCase()
                     console.log(pressedKey);
-                    isCorrectGuess(myGame.round.word, pressedKey);
-                    fillBlanks(myGame.round.word, myGame.round.puzzleState, pressedKey);
+                    isCorrectGuess(myGame.round.gameWords, pressedKey);
+                    fillBlanks(myGame.round.gameWords, myGame.round.puzzleState, pressedKey);
                     updateRound(myGame.round, pressedKey);
                     hasWon(myGame.round.puzzleState);
                     hasLost(myGame.round.guessesLeft);
