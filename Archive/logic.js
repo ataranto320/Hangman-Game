@@ -82,7 +82,7 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                 if (object.guessesLeft === 0) {
                     return true;
                 }
-                returnfalse;
+                return false;
             }
 
             function setupGame(gameWords, wins, losses) {
@@ -97,7 +97,7 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
 
             function startNewRound(newGame) {
                 var puzzleState = newGame.round.puzzleState;
-                var roundWord = newGame.round.word;
+                var roundWord = newGame.round.gameWords;
                 if (hasWon(puzzleState) === true) {
                     newGame.wins++;
                     alert("Mission Accomplished.");
@@ -123,6 +123,12 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                 document.onkeyup = function (event) {
 
                     pressedKey = event.key.toLowerCase()
+                    for (var i = 0; i < gameWords.length; i++) {
+                        if (pressedKey === gameWords[i]) {
+                            return true;
+                        }
+                    }
+                    }
                     console.log(pressedKey);
                     isCorrectGuess(myGame.round.gameWords, pressedKey);
                     fillBlanks(myGame.round.gameWords, myGame.round.puzzleState, pressedKey);
@@ -144,85 +150,86 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                     console.log(myGame);
                 }
             
+            
 
     
 
-            // function setupRound(game){
-            //     var puzzleState = 
-            //     game.round.puzzleState;
-            //     if (hasWon(puzzleState) === true) {
-            //         game.wins++;
-            //         alert("Mission Accomplished.");
-            //         else {
-            //             game.losses++;
-            //             alert("Game Over.");
-            //         }
-            //     }
-            //     return game;
-            // }
+    //         function setupRound(game){
+    //             var puzzleState = 
+    //             game.round.puzzleState;
+    //             if (hasWon(puzzleState) === true) {
+    //                 game.wins++;
+    //                 alert("Mission Accomplished.");
+    //                 else {
+    //                     game.losses++;
+    //                     alert("Game Over.");
+    //                 }
+    //             }
+    //             return game;
+    //         }
 
 
-        // var select = selectword[random];
+    //     var select = selectword[random];
 
         
 
-        // // var gameWords = document.getElementById("game-words");
+    //     // var gameWords = document.getElementById("game-words");
 
-        // $(gameWords)
+    //     $(gameWords)
 
-        // function isCorrectGuess(letters, gameWords);
-        // isCorrectGuess('snake', 's');
-        // if (word[i] === "-") {
-        //     isCorrectGuess.innerHTML = "-";
-        //     space = 1;
-        // }
-        // else {
-        //     isCorrectGuess.innerHTML = "_";
-        // }
+    //     function isCorrectGuess(letters, gameWords);
+    //     isCorrectGuess('snake', 's');
+    //     if (word[i] === "-") {
+    //         isCorrectGuess.innerHTML = "-";
+    //         space = 1;
+    //     }
+    //     else {
+    //         isCorrectGuess.innerHTML = "_";
+    //     }
     
-        // function isCorrectGuess(letters, gameWords);
-        // isCorrectGuess('snake', 'n');
-        // if (word[i] === "-") {
-        //     isCorrectGuess.innerHTML = "-";
-        //     space = 1;
-        // }
-        // else {
-        //     isCorrectGuess.innerHTML = "_";
-        // }    
+    //     function isCorrectGuess(letters, gameWords);
+    //     isCorrectGuess('snake', 'n');
+    //     if (word[i] === "-") {
+    //         isCorrectGuess.innerHTML = "-";
+    //         space = 1;
+    //     }
+    //     else {
+    //         isCorrectGuess.innerHTML = "_";
+    //     }    
 
-        // function isCorrectGuess(letters, gameWords);
-        // isCorrectGuess('snake', 'a');
-        // if (word[i] === "-") {
-        //     isCorrectGuess.innerHTML = "-";
-        //     space = 1;
-        // }
-        // else {
-        //     isCorrectGuess.innerHTML = "_";
-        // }
+    //     function isCorrectGuess(letters, gameWords);
+    //     isCorrectGuess('snake', 'a');
+    //     if (word[i] === "-") {
+    //         isCorrectGuess.innerHTML = "-";
+    //         space = 1;
+    //     }
+    //     else {
+    //         isCorrectGuess.innerHTML = "_";
+    //     }
 
-        // function isCorrectGuess(letters, gameWords);
-        // isCorrectGuess('snake', 'k');
-        // if (word[i] === "-") {
-        //     isCorrectGuess.innerHTML = "-";
-        //     space = 1;
-        // }
-        // else {
-        //     isCorrectGuess.innerHTML = "_";
-        // }
+    //     function isCorrectGuess(letters, gameWords);
+    //     isCorrectGuess('snake', 'k');
+    //     if (word[i] === "-") {
+    //         isCorrectGuess.innerHTML = "-";
+    //         space = 1;
+    //     }
+    //     else {
+    //         isCorrectGuess.innerHTML = "_";
+    //     }
 
-        // function isCorrectGuess(letters, gameWords);
-        // isCorrectGuess('snake', 'e');
-        // if (word[i] === "-") {
-        //     isCorrectGuess.innerHTML = "-";
-        //     space = 1;
-        // }
-        // else {
-        //     isCorrectGuess.innerHTML = "_";
-        // }
+    //     function isCorrectGuess(letters, gameWords);
+    //     isCorrectGuess('snake', 'e');
+    //     if (word[i] === "-") {
+    //         isCorrectGuess.innerHTML = "-";
+    //         space = 1;
+    //     }
+    //     else {
+    //         isCorrectGuess.innerHTML = "_";
+    //     }
 
-        // function randomWordReturn(gameWords){
-        //     document.getElementById(gameWords).innerHTML = gameWords.find(randomWordReturn);
-        // }
+    //     function randomWordReturn(gameWords){
+    //         document.getElementById(gameWords).innerHTML = gameWords.find(randomWordReturn);
+    //     }
 
         
 
@@ -236,10 +243,10 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
     //     var space;
 
     //     //elements
-        // var guessesLeft = document.getElementById("guessesLeft");
-        // var randomWord = document.getElementById("randomWord");
-        // var getBlanks = document.getElementById("getBlanks");
-        // var fillBlanks = document.getElementById("fillBlanks");
+    //     var guessesLeft = document.getElementById("guessesLeft");
+    //     var randomWord = document.getElementById("randomWord");
+    //     var getBlanks = document.getElementById("getBlanks");
+    //     var fillBlanks = document.getElementById("fillBlanks");
 
     //     //try to create letter list
     //     var buttons = function() {
@@ -311,15 +318,15 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
 
 
 
-            //    var setupRound
-            //    var word
-            //    var guessesLeft
-            //    var wrongGuesses
-            //    var puzzleState
+    //            var setupRound
+    //            var word
+    //            var guessesLeft
+    //            var wrongGuesses
+    //            var puzzleState
 
-            // function guessesLeft(game){
+    //         function guessesLeft(game){
 
-            // }
+    //         }
 
     //            var hasWon = ["Mission Accomplished"];
     //            var hasLost = ["Game Over"];
