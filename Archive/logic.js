@@ -1,6 +1,6 @@
-var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-    var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot']
+    var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot'];
 
         function randomWord(gameWords){
             return gameWords [Math.floor(Math.random() * gameWords.length)];
@@ -8,11 +8,10 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
 
         var isCorrectGuess = function(word, letters) {
             for (var i = 0; i < word.length; i++) {
-                if (word[i] === letters) {
+                if (word[i] === letters) 
                     return true;
-                }
-            }
-            return false;
+                else 
+                return false;
         }
 
         // // picking random word from array
@@ -21,43 +20,43 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
         //       getBlanks[i] = "_";
         // }
 
-        var getBlanks = function(gameWords) {
+        var getBlanks = function(word) {
             var answerArr = [];
-            for (var i = 0; i < gameWords.length; i++) {
+            for (var i = 0; i < word.length; i++) {
                 answerArr[i] = "_";
             }
             return answerArr;
         }
 
         //replace blank with letter
-        function fillBlanks(gameWords, puzzleState, letters) {
-            if (isCorrectGuess(gameWords, letters)) {
-                for (var i = 0; i < gameWords.length; i++) {
-                    if (gameWords[i] === letters) {
-                        puzzleState[i] = letters;
+        function fillBlanks(word, puzzleState, letters) {
+            if (isCorrectGuess(word, letters)) {
+                for (var i = 0; i < word.length; i++) {
+                    if (word[i] === letters) {
+                        puzzleState[i] = word[i];
                     }
                 }
             }
             return puzzleState;
         }
 
-        function setupRound(gameWords) {
+        function setupRound(word) {
             var object = {
                 word: word,
                 guessesLeft: 9,
                 wrongGuesses: [],
-                puzzleState: getBlanks(gameWords),
+                puzzleState: getBlanks(word),
             }
             return object;
         }
 
         function updateRound(object, letters) {
-            if (isCorrectGuess(object.gameWords, letters) === false) {
+            if (isCorrectGuess(object.word, letters) === false) {
                 object.guessesLeft--;
                 object.wrongGuesses.push(letters);
             }
             else {
-                fillBlanks(object.gameWords, object.puzzleState, letters)
+                fillBlanks(object.word, object.puzzleState, letters)
             }
             return object;
         }
@@ -68,7 +67,8 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                     return false;
                 }
             }
-            return true ("Misson Accomplished.");
+            return true ("Mission Accomplished.")
+            // console.log("Misson Accomplished.");
         }
 
             function hasLost(guessesLeft) {
@@ -102,12 +102,12 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                     newGame.wins++;
                     alert("Mission Accomplished.");
                 }
-            }
                 else {
                     newGame.losses++;
                     alert("Game Over.");
                 }
                 return newGame;
+            }
                     
                 
                 
@@ -122,16 +122,12 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                 document.onkeyup = function (event) {
 
                     pressedKey = event.key.toLowerCase()
-                    for (var i = 0; i < gameWords.length; i++) {
-                        if (pressedKey === gameWords[i]) {
-                            return true;
-                        }
-                    }
+                    
                     }
 
                     console.log(pressedKey);
-                    isCorrectGuess(myGame.round.gameWords, pressedKey);
-                    fillBlanks(myGame.round.gameWords, myGame.round.puzzleState, pressedKey);
+                    isCorrectGuess(myGame.round.word, pressedKey);
+                    fillBlanks(myGame.round.word, myGame.round.puzzleState, pressedKey);
                     updateRound(myGame.round, pressedKey);
                     hasWon(myGame.round.puzzleState);
                     hasLost(myGame.round.guessesLeft);
@@ -141,6 +137,8 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
                         myGame.round = setupRound(randomWord(gameWords));
                     }
 
+                    window.onload = function () {
+
                     document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
                     document.getElementById("win-counter").innerHTML = myGame.wins;
                     document.getElementById("loss-counter").innerHTML = myGame.losses;
@@ -149,6 +147,7 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
 
                     console.log(myGame);
                 }
+        
             
                 //can't get audio to work.
                 var audioElement = document.createElement("audio");
@@ -351,5 +350,3 @@ var letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', '
     //     }
 
 
-
-    
