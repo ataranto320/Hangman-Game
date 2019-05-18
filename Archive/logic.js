@@ -2,15 +2,34 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
 
     var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot'];
 
+    function updateHTML() {
+        // Uses the ramdom word and displays the empty blanks
+        document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
+        console.log(myGame.round.puzzleState)
+        // Displays the updated object for wrong guesses from user
+        document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses;
+      
+        // Displays the updated object for total wins
+        document.getElementById("win-counter").innerText = myGame.wins;
+      
+        // Displays the updated object for total losses
+        document.getElementById("loss-counter").innerText = myGame.losses;
+      
+        // Displays the updated object for number of guesses left
+        document.getElementById("guesses-left").innerText = myGame.round.guessesLeft;
+      
+      }
+
         function randomWord(gameWords){
             return gameWords [Math.floor(Math.random() * gameWords.length)];
         }
 
         var isCorrectGuess = function(word, letters) {
             for (var i = 0; i < word.length; i++) {
-                if (word[i] === letters) 
+                if (word[i] === letters) {
                     return true;
-                else 
+                }
+            }
                 return false;
         }
 
@@ -23,19 +42,17 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
         var getBlanks = function(word) {
             var answerArr = [];
             for (var i = 0; i < word.length; i++) {
-                answerArr[i] = "_";
+                answerArr.push("_");
             }
             return answerArr;
         }
 
         //replace blank with letter
         function fillBlanks(word, puzzleState, letters) {
-            if (isCorrectGuess(word, letters)) {
                 for (var i = 0; i < word.length; i++) {
                     if (word[i] === letters) {
                         puzzleState[i] = word[i];
                     }
-                }
             }
             return puzzleState;
         }
@@ -67,13 +84,13 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
                     return false;
                 }
             }
-            return true ("Mission Accomplished.")
+            return true
             // console.log("Misson Accomplished.");
         }
 
             function hasLost(guessesLeft) {
                 if (guessesLeft === 0) {
-                    return true ("Game Over.");
+                    return true
                 }
                 return false;
             }
@@ -81,6 +98,9 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
             function isEndOfRound(object) {
                 if (object.guessesLeft === 0) {
                     return true;
+                }
+                if (hasWon(object.puzzleState)) {
+                    return true
                 }
                 return false;
             }
@@ -115,38 +135,35 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
 
                 console.log(myGame);
 
-                var puzzle = document.getElementById("puzzle-state")
-                puzzle.innerHTML = myGame.round.puzzleState.join(" ")
+                var myGame = setupGame(gameWords, 0, 0)
+                console.log(myGame)
+                document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ")
 
-                var pressedKey;
-                document.onkeyup = function (event) {
+                document.onkeyup = function(evt) {
+                var keyPressed = evt.key.toLowerCase()
+                // CALL BACK THE LOGIC
+                isCorrectGuess(myGame.round.word, keyPressed)
+                fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed)
+                updateRound(myGame.round, keyPressed)
+                hasWon(myGame.round.puzzleState)
+                hasLost(myGame.round.guessesLeft)
 
-                    pressedKey = event.key.toLowerCase()
-                    
-                    }
+                // CHECKS IF GUESSES ARE LEFT OR HAS WON
 
-                    console.log(pressedKey);
-                    isCorrectGuess(myGame.round.word, pressedKey);
-                    fillBlanks(myGame.round.word, myGame.round.puzzleState, pressedKey);
-                    updateRound(myGame.round, pressedKey);
-                    hasWon(myGame.round.puzzleState);
-                    hasLost(myGame.round.guessesLeft);
 
+
+                // --------- end CALL BACK THE LOGIC
+
+                setTimeout(function surveySays() {
                     if (isEndOfRound(myGame.round)) {
-                        myGame = startNewRound(myGame);
-                        myGame.round = setupRound(randomWord(gameWords));
+                    myGame = startNewRound(myGame)
+                    myGame.round = setupRound(randomWord(gameWords))
                     }
+                }, 500)
 
-                    window.onload = function () {
+                updateHTML()
 
-                    document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
-                    document.getElementById("win-counter").innerHTML = myGame.wins;
-                    document.getElementById("loss-counter").innerHTML = myGame.losses;
-                    document.getElementById('wrong-guesses').innerHTML = myGame.round.wrongGuesses;
-                    document.getElementById("gusses-left").innerHTML = myGame.round.guessesLeft;
-
-                    console.log(myGame);
-                }
+}
         
             
                 //can't get audio to work.
