@@ -9,3 +9,7 @@ body {
     float: bottom;
     margin-top: 500px;
   }
+
+  p {
+    font-size: 18px;
+  }
