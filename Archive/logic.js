@@ -1,13 +1,16 @@
-var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+// var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
     var gameWords = ['snake', 'liquid', 'greyfox', 'bigboss', 'ocelot'];
+
+    // need puzzleState defined
+    // or is it defined already
 
     function updateHTML() {
         // Uses the ramdom word and displays the empty blanks
         document.getElementById("puzzle-state").innerText = myGame.round.puzzleState.join(" ");
         console.log(myGame.round.puzzleState)
         // Displays the updated object for wrong guesses from user
-        document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses;
+        document.getElementById("wrong-guesses").innerText = myGame.round.wrongGuesses.join(" ");
       
         // Displays the updated object for total wins
         document.getElementById("win-counter").innerText = myGame.wins;
@@ -24,9 +27,9 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
             return gameWords [Math.floor(Math.random() * gameWords.length)];
         }
 
-        var isCorrectGuess = function(word, letters) {
-            for (var i = 0; i < word.length; i++) {
-                if (word[i] === letters) {
+        var isCorrectGuess = function(words, letters) {
+            for (var i = 0; i < words.length; i++) {
+                if (words[i] === letters) {
                     return true;
                 }
             }
@@ -39,9 +42,9 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
         //       getBlanks[i] = "_";
         // }
 
-        var getBlanks = function(word) {
+        var getBlanks = function(words) {
             var answerArr = [];
-            for (var i = 0; i < word.length; i++) {
+            for (var i = 0; i < words.length; i++) {
                 answerArr.push("_");
             }
             return answerArr;
@@ -67,15 +70,15 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
             return object;
         }
 
-        function updateRound(object, letters) {
-            if (isCorrectGuess(object.word, letters) === false) {
-                object.guessesLeft--;
-                object.wrongGuesses.push(letters);
+        function updateRound(round, letter) {
+            if (isCorrectGuess(round.word, letter) === false) {
+                round.guessesLeft--;
+                round.wrongGuesses.push(letter);
             }
             else {
-                fillBlanks(object.word, object.puzzleState, letters)
+                fillBlanks(round.word, round.puzzleState, letter)
             }
-            return object;
+            return round;
         }
 
         function hasWon(puzzleState) {
@@ -99,21 +102,23 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
                 if (object.guessesLeft === 0) {
                     return true;
                 }
+                // hasLost instead of object?
                 if (hasWon(object.puzzleState)) {
                     return true
                 }
                 return false;
             }
 
-            function setupGame(gameWords, wins, losses) {
+            function setupGame(words, wins, losses) {
                 var newGame = {
-                    words: gameWords,
+                    words: words,
                     wins: wins,
                     losses: losses,
-                    newRound: setupRound(randomWord(gameWords)),
+                    round: setupRound(randomWord(words)),
                 }
                 return newGame;
             }
+            // words over gameWords?
 
             function startNewRound(newGame) {
                 var puzzleState = newGame.round.puzzleState;
@@ -128,6 +133,9 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
                 }
                 return newGame;
             }
+            // problem area?
+            //roundWord not being declared 
+            // setupRound within startNewRound?
                     
                 
                 
@@ -135,18 +143,20 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
 
                 console.log(myGame);
 
-                var myGame = setupGame(gameWords, 0, 0)
-                console.log(myGame)
-                document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ")
+                // var myGame = setupGame(gameWords, 0, 0)
+                // console.log(myGame)
+                // document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ")
 
                 document.onkeyup = function(evt) {
                 var keyPressed = evt.key.toLowerCase()
                 // CALL BACK THE LOGIC
-                isCorrectGuess(myGame.round.word, keyPressed)
+                isCorrectGuess(myGame.words, keyPressed)
                 fillBlanks(myGame.round.word, myGame.round.puzzleState, keyPressed)
                 updateRound(myGame.round, keyPressed)
                 hasWon(myGame.round.puzzleState)
                 hasLost(myGame.round.guessesLeft)
+
+                //just updateRound?
 
                 // CHECKS IF GUESSES ARE LEFT OR HAS WON
 
@@ -159,16 +169,22 @@ var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
                     myGame = startNewRound(myGame)
                     myGame.round = setupRound(randomWord(gameWords))
                     }
+                    updateHTML();
                 }, 500)
+                updateHTML();
+                
 
-                updateHTML()
+                //do i need this?
 
-}
+};
+
+//need to load page?
+// updateHTML();
         
             
                 //can't get audio to work.
-                var audioElement = document.createElement("audio");
-                audioElement.setAttribute(src="https://www.youtube.com/watch?v=5105DeorjrY");
+                // var audioElement = document.createElement("audio");
+                // audioElement.setAttribute(src="https://www.youtube.com/watch?v=5105DeorjrY");
             
 
     
