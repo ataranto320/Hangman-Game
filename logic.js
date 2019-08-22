@@ -90,7 +90,7 @@
             }
 
             function isEndOfRound(object) {
-                if (object.guessesLeft === 0) {
+                if (object.guessesLeft <= 0) {
                     return true;
                 }
                 if (hasWon(object.puzzleState)) {
@@ -153,7 +153,7 @@
                     myGame.round = setupRound(randomWord(gameWords))
                     }
                     updateHTML();
-                }, 500)
+                }, 10)
                 updateHTML();
 
 };
