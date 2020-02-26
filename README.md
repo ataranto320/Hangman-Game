@@ -8,6 +8,8 @@ Mission Objectives:
 - You will have 9 guesses to decode the word or the mission is over. 
 - Once you complete one word (or fail), the game will reset and another word will appear.
 
+![](pics/metal-gear-ss.png)
+
 Deployed Link: https://ataranto320.github.io/Hangman-Game/
 
 - HTML5
