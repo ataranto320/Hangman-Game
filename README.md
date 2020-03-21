@@ -12,7 +12,7 @@ Mission Objectives:
 
 Deployed Link: https://ataranto320.github.io/Hangman-Game/
 
-Lnaguages:
+Languages:
 
 - HTML5
 - CSS
